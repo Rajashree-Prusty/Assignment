@@ -1,0 +1,24 @@
+function reverseWordsInSentence(sentence) {
+
+    const words = sentence.split(" ");
+
+    
+    const reversedSentence = words.map(word => {
+    
+        const reversedWord = word.split("").reverse().map((letter, index) => {
+            if (word[index] === word[index].toUpperCase()) {
+                return letter.toUpperCase();
+            } else {
+                return letter.toLowerCase();
+            }
+        }).join("");
+
+        return reversedWord;
+    }).join(" ");
+
+    return reversedSentence;
+}
+
+const inputSentence = "This is a sunny day";
+const reversedSentence = reverseWordsInSentence(inputSentence);
+console.log("Reversed sentence: " + reversedSentence);
